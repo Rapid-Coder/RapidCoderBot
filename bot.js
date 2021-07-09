@@ -21,12 +21,6 @@ bot.on("message", message => {
             .setDescription(`**Prefix:** ${config.prefix}`)
             .addField(`\`ping\``, `Check your bot's ping`)
             .addField(`\`bdfdhelp\``, `**get help with BDFD**`)
-            .addField(`\`ban\``, `Usage: **${config.prefix}ban [@User]**\n**${config.prefix}ban [@User][Reason]**`)
-            .addField(`\`add\``, `Adds a role to a user \nUsage: **${config.prefix}add [@User] [Role]**`)
-            .addField(`\`remove\``, `Removes a role from a user \nUsage: **${config.prefix}remove [@User] [Role]**`)
-            .addField(`\`purge\``, `Clears a number of messages between 2 or 100 \nUsage: **${config.prefix}purge [number]**`)
-            .addField(`\`rps\``, `Play rock paper scissors`)
-            .addField(`\`say\``, `Have the bot say something`)
         message.channel.send(helpEmbed)
     }
 
@@ -35,15 +29,49 @@ bot.on("message", message => {
             .setTitle(`${bot.user.username}'s commands`)
             .setDescription(`**Prefix:** ${config.prefix}`)
             .addField(`\`ping\``, `Check your bot's ping`)
-            .addField(`\`kick\``, `Usage: **${config.prefix}kick [@User]**\n**${config.prefix}kick [@User][Reason]**`)
-            .addField(`\`ban\``, `Usage: **${config.prefix}ban [@User]**\n**${config.prefix}ban [@User][Reason]**`)
-            .addField(`\`add\``, `Adds a role to a user \nUsage: **${config.prefix}add [@User] [Role]**`)
-            .addField(`\`remove\``, `Removes a role from a user \nUsage: **${config.prefix}remove [@User] [Role]**`)
-            .addField(`\`purge\``, `Clears a number of messages between 2 or 100 \nUsage: **${config.prefix}purge [number]**`)
-            .addField(`\`rps\``, `Play rock paper scissors`)
-            .addField(`\`say\``, `Have the bot say something`)
+            .addField(`\`bdfdvariables\``, `**Learn how the variables work in BDFD if your a experienced user this may help too.**`)
+            .addField(`\`custocommandsbdfd\``, `**Custom Commands made by the Developer's of RapidCoding!**`)
+            .addField(`\`premiumbdfd\``, `**Help with premium commands**`)
+            .addField(`\`bdfdcommands\``, `**All commands, Premium ones are not in this section!**`)
+            .addField(`\`bdfdquestions\``, `**An answer to common questions in BDFD!**`)
         message.channel.send(helpEmbed)
     }
+
+if (command === "bdfdvariables") {
+        const helpEmbed = new Discord.MessageEmbed()
+            .setTitle(`${bot.user.username}'s commands`)
+            .setDescription(`Using Variables in BDFD is easier than you think, Here is an example of when you can use a variable and how to do it. 
+We are going to make a cool id command so people on for example your staff team can set a unique id to be identified by.
+1. Make a variable called **specialid**
+2. Make a new command and place this code inside it: $setUserVar[specialid;$message]
+$description[**$username** your id should now be set!
+$footer[This is your unique id]
+
+After that lets make a command to check the ID
+$username your id is: $getUserVar[specialid;$authorID
+$deletecommand
+$varExistError[specialid;You have no Unique ID, Error]
+
+After that you can make a command to delete the ID if you wish
+$sesetUserVar[specialid;$atuhorID]
+#description[Your id should now be reset!]
+$deletecommand
+
+And your done, Good Job. Please do not use this without giving us credit.`)
+        message.channel.send(helpEmbed)
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     if (command === "ping") {
         message.channel.send(`Pong **(${Date.now() - message.createdTimestamp}ms)**`)
