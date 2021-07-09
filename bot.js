@@ -7,6 +7,7 @@ bot.on("ready", () => {
     console.log("Loaded up!")
     bot.user.setActivity(`&help to ${bot.guilds.cache.size} servers.`, { url: '', type: 'PLAYING' })
 });
+bot.user.setActivity(`&help to ${bot.guilds.cache.size} servers.`, { url: '', type: 'PLAYING' })
 
 bot.on("message", message => {
     if (message.author.bot) return;
