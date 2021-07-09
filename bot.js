@@ -22,6 +22,7 @@ bot.on("message", message => {
             .setDescription(`**Prefix:** ${config.prefix}`)
             .addField(`\`ping\``, `Check your bot's ping`)
             .addField(`\`bdfdhelp\``, `**get help with BDFD**`)
+            .setFooter(`Please note, We are not associated with any of these company's or framework's, We are simply here to help make life easier.`)
         message.channel.send(helpEmbed)
     }
 
